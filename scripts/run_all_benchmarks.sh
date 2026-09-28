@@ -1,12 +1,12 @@
-rm -f files/conditon/base.json files/conditon/codegen.json files/conditon/separate_func.json
+rm -f files/condition/base.json files/condition/codegen.json files/condition/separate_func.json
 echo "=== Condition base benchmark ==="
-python -m codegen_benchmarks.condition.base -o files/conditon/base.json --quiet
+python -m codegen_benchmarks.condition.base -o files/condition/base.json --quiet
 echo "================================"
 echo "=== Condition codegen benchmark ==="
-python -m codegen_benchmarks.condition.codegen -o files/conditon/codegen.json --quiet
+python -m codegen_benchmarks.condition.codegen -o files/condition/codegen.json --quiet
 echo "================================"
 echo "=== Condition separate func benchmark ==="
-python -m codegen_benchmarks.condition.separate_func -o files/conditon/separate_func.json --quiet
+python -m codegen_benchmarks.condition.separate_func -o files/condition/separate_func.json --quiet
 echo "================================"
 
 rm -f files/loop/base.json files/loop/codegen.json
@@ -27,6 +27,6 @@ pip install -r src/codegen_benchmarks/dishka_wrap_injection/codegen_version.txt
 python -m codegen_benchmarks.dishka_wrap_injection.base -o files/dishka_wrap_injection/codegen.json --quiet
 echo "================================"
 
-pyperf compare_to files/conditon/base.json files/conditon/codegen.json files/conditon/separate_func.json --table
+pyperf compare_to files/condition/base.json files/condition/codegen.json files/condition/separate_func.json --table
 pyperf compare_to files/loop/base.json files/loop/codegen.json --table
 pyperf compare_to files/dishka_wrap_injection/base.json files/dishka_wrap_injection/codegen.json --table
