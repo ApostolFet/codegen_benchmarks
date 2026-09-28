@@ -1,0 +1,1 @@
+git+https://github.com/reagento/dishka.git@d53604e5d28fa4f0f0dfaaa9a281ac1bb0913d2b

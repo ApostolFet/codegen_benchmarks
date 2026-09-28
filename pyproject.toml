@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codegen_benchmarks"
+version = "0.1.0"
+authors = [
+    {name = "Ageev Maxim", email = "maksim170901@gmail.com"},
+]
+description = "Codegen benchmarks"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+]
+
+dependencies = [
+    "pyperf>=2.10.0",
+]
