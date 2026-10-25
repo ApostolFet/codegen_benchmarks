@@ -5,9 +5,9 @@ from codegen_benchmarks.base import run_benchmark
 
 
 def start_up() -> dict[str, Any]:
-    def get_result(user_input: float, is_devide: bool, is_round: bool) -> float:
+    def get_result(user_input: float, is_divide: bool, is_round: bool) -> float:
 
-        if is_devide:
+        if is_divide:
             user_input = user_input / 2
 
         if is_round:
@@ -16,11 +16,11 @@ def start_up() -> dict[str, Any]:
         return user_input * 11
 
 
-    is_devide = True
+    is_divide = True
     is_round = True
 
     def main() -> None:
-        get_result(1000, is_devide=is_devide, is_round=is_round)
+        get_result(1000, is_divide=is_divide, is_round=is_round)
 
     return {"get_result": get_result, "main": main}
 

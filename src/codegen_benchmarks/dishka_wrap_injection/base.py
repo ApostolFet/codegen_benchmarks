@@ -13,6 +13,9 @@ def start_up() -> dict[str, Any]:
 
         get_str = provide(lambda self: "1", provides=str)
         get_int = provide(lambda self: 1, provides=int)
+        get_bytes = provide(lambda self: b"1", provides=bytes)
+        get_tuple = provide(lambda self: (1,), provides=tuple[int])
+        get_object = provide(object)
 
     container = make_container(MyProvider())
 
@@ -31,7 +34,13 @@ def start_up() -> dict[str, Any]:
         )
 
     @inject
-    def my_func(x: FromDishka[str], y: FromDishka[int]):
+    def my_func(
+        str_param: FromDishka[str],
+        int_param: FromDishka[int],
+        bytes_param: FromDishka[bytes],
+        tuple_param: FromDishka[tuple[int]],
+        object_param: FromDishka[object],
+    ) -> None:
         pass
 
     def main():

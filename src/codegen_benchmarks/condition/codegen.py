@@ -6,12 +6,12 @@ from codegen_benchmarks.base import run_benchmark
 
 def start_up() -> dict[str, Any]:
     def generate_get_result(
-        is_devide: bool, is_round: bool
+        is_divide: bool, is_round: bool
     ) -> Callable[[float], float]:
         indent = "   "
         next_row = "\n"
         code = ["def get_result(user_input):"]
-        if is_devide:
+        if is_divide:
             code += [next_row, indent, "user_input = user_input / 2"]
 
         if is_round:
@@ -22,10 +22,10 @@ def start_up() -> dict[str, Any]:
         exec("".join(code), globals)
         return globals["get_result"]
 
-    is_devide = True 
+    is_divide = True
     is_round = True
 
-    get_result = generate_get_result(is_devide, is_round)
+    get_result = generate_get_result(is_divide, is_round)
 
     def main() -> None:
         get_result(1000)
